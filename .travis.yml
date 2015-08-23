@@ -11,3 +11,17 @@ install:
     - pip install tox
 script:
     - tox -e $TOX_ENV
+
+deploy:
+    provider: pypi
+    user: tom-mi
+    password:
+        secure: Q7aRTi3lUqitcvMSxTnbEHKv1QqF+8v2Q1U79PJcXdMHWqCTCEpV4tmudMt2sCFuNSOJYBB9392HRIWdMAzecmw31X/EuVhRk1dYcKBpgqnG6ljA4leW+wx7GnpEFxFqeQ0gUvSB1nwsrELU0QJOU7BwxtTN9QD2spejDW05/r3dlF7NAPB3nqnYXsG2xos1IEY5eS7tYZWZjt45D7xwOHzOPpBC/DZtrLGJhVLIRi8/CWyQYJ8KSoGgJOogpi0F7CZwuPfhUUsingRdi5GREH4g5RYlNzQtRnk9yij/SHJYzT/P2qt/WSWKUS753itZh7uBwRxsWfso2DF4VQusDWSDctz8kdbFgEqXltKbgOBLquiywF06Fz4XWpOEP33UKq/JWR7OLkrhLdFpmOVCZqmdTB38MRl/cAf3We/ex7DsdRQXZPOYFN+OD6gCBaQhWO9aIzP1C1QvFVgSi9j8jQ8Cj2lHel6RUUwdJ8xYVY/wKn+W7+XpwGDOj6zHol3SaahBQlgHF3wayb46y8mifEpEY+7d3BmcI6ef4DLTspGFEEsZkPo8oEpohsd6/Dy8c5CNJd1kqqDJIUXnI/HCk7yaqeGW7ia3uXlerJdvkha21/6xCqaqo3VKulqfMLR8FSrPjTuoN79MTbTaZjuoBnMUu27IPHu8aY4PymKAeq8=
+    on:
+        tags: true
+        repo: tom-mi/python-inklevel
+    distributions: bdist_wheel
+before_deploy:
+    - sudo apt-get update -qq
+    - sudo apt-get install -y pandoc
+    - pip install pypandoc
