@@ -1,5 +1,7 @@
 # python-inklevel
 
+[![Build Status](https://travis-ci.org/tom-mi/python-inklevel.svg?branch=master)](https://travis-ci.org/tom-mi/python-inklevel)
+
 Python wrapper for [libinklevel](http://libinklevel.sourceforge.net/).
 
 ## Prerequisites
