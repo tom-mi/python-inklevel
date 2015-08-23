@@ -3,6 +3,10 @@ from collections import namedtuple
 import inklevel._cbindings
 from inklevel._constants import CartridgeType, ReturnValue, Port
 
+from ._version import get_versions
+__version__ = get_versions()['version']
+del get_versions
+
 
 def get_ink_level(port, device_file, portnumber):
     return_value, data = inklevel._cbindings.get_ink_level_c(port.value, device_file, portnumber)

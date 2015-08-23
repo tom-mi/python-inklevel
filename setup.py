@@ -1,7 +1,7 @@
-from __future__ import print_function
+import sys
 
 from setuptools import find_packages, setup
-import sys
+import versioneer
 
 
 def read_md(filename):
@@ -20,7 +20,7 @@ if sys.version_info < (3, 4):
 
 setup(
     name='inklevel',
-    version='0.1',
+    version=versioneer.get_version(),
     url='https://github.com/tom-mi/python-inklevel/',
     license='GPLv2',
     author='Thomas Reifenberger',
@@ -44,4 +44,5 @@ setup(
         'Intended Audience :: Developers',
         'Topic :: System :: Monitoring',
         ],
+    cmdclass=versioneer.get_cmdclass(),
 )
