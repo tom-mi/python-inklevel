@@ -24,6 +24,8 @@ deploy:
     distributions: bdist_wheel
 
 before_deploy:
+    # FIXME: Remove pandoc backport when ci version is sufficient
+    - sudo add-apt-repository ppa:marutter/c2d4u
     - sudo apt-get update -qq
     - sudo apt-get install -y pandoc
     - pip install pypandoc

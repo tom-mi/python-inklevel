@@ -7,7 +7,7 @@ import versioneer
 def read_md(filename):
     try:
         from pypandoc import convert
-        return convert('README.md', 'rst')
+        return convert(filename, 'rst')
     except ImportError:
         print("warning: pypandoc module not found, could not convert Markdown to RST")
         return open(filename, 'r').read()
