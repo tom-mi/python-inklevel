@@ -10,6 +10,10 @@ Install [libinklevel](http://libinklevel.sourceforge.net/), e.g. on Debian:
 
     apt-get install libinklevel
 
+## Installation
+
+    pip install inklevel
+
 ## Usage
 
     import inklevel
